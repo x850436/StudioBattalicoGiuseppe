@@ -34,7 +34,7 @@ def crea_backup_automatico():
         pass
 
 # --- CONFIGURAZIONE PAGINA ---
-st.set_page_config(page_title="Studio Ga.Ma. srl", layout="wide", page_icon="🦷")
+st.set_page_config(page_title="Studio Giuseppe Bottalico", layout="wide", page_icon="🦷")
 
 # --- CSS PERSONALIZZATO ---
 st.markdown("""
@@ -147,7 +147,7 @@ def esporta_pdf(df, data, medico):
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Arial", 'B', 16)
-    pdf.cell(190, 10, "STUDIO GA.MA. SRL - AGENDA", 0, 1, 'C')
+    pdf.cell(190, 10, "STUDIO Bottalico - AGENDA", 0, 1, 'C')
     pdf.set_font("Arial", '', 12)
     pdf.cell(190, 8, f"Data: {data} | Medico: {medico}", 0, 1, 'C')
     pdf.ln(10)
@@ -168,11 +168,11 @@ def genera_ricevuta_pdf(paziente, data, importo, descrizione="Prestazione Odonto
     pdf.add_page()
     # Intestazione
     pdf.set_font("Arial", 'B', 16)
-    pdf.cell(190, 10, "STUDIO ODONTOIATRICO GA.MA. SRL", 0, 1, 'C')
+    pdf.cell(190, 10, "STUDIO G.Bottalico", 0, 1, 'C')
     pdf.set_font("Arial", '', 10)
     pdf.cell(190, 5, "- Ricevuta Interna di Pagamento-", 0, 1, 'C')
     pdf.cell(190, 5, "Sede Legale", 0, 1, 'C')
-    pdf.cell(190, 5, "Via XX Settembre, 7, 84091 Battipaglia (SA)", 0, 1, 'C')
+    pdf.cell(190, 5, "Via --------, --, ----- Battipaglia (SA)", 0, 1, 'C')
     
     pdf.ln(20)
     
@@ -196,9 +196,9 @@ def genera_ricevuta_pdf(paziente, data, importo, descrizione="Prestazione Odonto
     
     # Firma
     pdf.set_font("Arial", 'I', 10)
-    pdf.cell(190, 10, "STUDIO ODONTOIATRICO GA.MA. SRL", 0, 1, 'R')
+    pdf.cell(190, 10, "STUDIO G.Bottalico", 0, 1, 'R')
     pdf.cell(190, 10, "__________________________", 0, 1, 'R')
-    pdf.cell(190, 10, "dott. Stefano Pio Gammella", 0, 1, 'R')
+    pdf.cell(190, 10, "dott. Giuseppe Bottalico", 0, 1, 'R')
     
     return pdf.output(dest='S').encode('latin-1', errors='ignore')
 
@@ -268,7 +268,7 @@ if "pazienti" not in st.session_state.db or len(st.session_state.db["pazienti"])
 
 # --- MENU LATERALE ---
 with st.sidebar:
-    st.markdown("## 🦷 STUDIO GA.MA.")
+    st.markdown("## 🦷 Studio G.Bottalico")
     st.markdown("### 🏷️ LEGENDA VISITA")
     st.markdown("""
         <p class="legenda-p"><span class="emoji-space">🔴</span><b>[URG]</b> Urgenza</p>
@@ -331,7 +331,7 @@ if menu == "🏠 Dashboard":
                 {logo_html}
                 <div>
                     <h2 style="margin: 0; font-size: 26px; color: #1c3d5a; font-family: 'Segoe UI', system-ui, sans-serif; font-weight: 600;">
-                        Studio Odontoiatrico Ga.Ma.
+                        STUDIO Giuseppe Bottalico
                     </h2>
                     <p style="margin: 0; font-size: 13px; color: #555555; font-style: italic;">
                         Gestionale Clinico Interno
@@ -342,7 +342,7 @@ if menu == "🏠 Dashboard":
             unsafe_allow_html=True
         )
     except:
-        st.title("🦷 STUDIO ODONTOIATRICO GA.MA.")
+        st.title("🦷 STUDIO G.Bottalico.")
     
     st.subheader(f"Situazione al {datetime.now().strftime('%d/%m/%Y')}")
     st.divider()
@@ -396,7 +396,7 @@ if menu == "🏠 Dashboard":
                     appuntamenti_domani.append(app)
         
         if appuntamenti_domani:
-            msg_domani_base = "Gentile paziente, le ricordiamo il suo appuntamento presso lo Studio Dentistico Ga.Ma. per domani alle ore [ORA]. La preghiamo di avvisare con anticipo in caso di impedimento. Saluti!"
+            msg_domani_base = "Gentile paziente, le ricordiamo il suo appuntamento presso lo STUDIO G.Bottalico. per domani alle ore [ORA]. La preghiamo di avvisare con anticipo in caso di impedimento. Saluti!"
             
             testo_wa_domani = st.text_area(
                 "Modifica il testo base del promemoria:",
@@ -482,7 +482,7 @@ if menu == "🏠 Dashboard":
         st.info("🤷‍♂️ Non ci sono appuntamenti fissati per la giornata di oggi.")
 
     st.markdown("---")
-    st.markdown('<p style="color:#003366; font-size:14px; font-weight:bold;">Studio Odontoiatrico GA.MA. SRL - Via XX Settembre, 7 - Battipaglia (SA) - Direttore Sanitario Dott. Stefano Pio Gammella</p>', unsafe_allow_html=True)
+    st.markdown('<p style="color:#003366; font-size:14px; font-weight:bold;">Studio Odontoiatrico Giuseppe Bottalico - Via ------, -- - Battipaglia (SA) - Direttore Sanitario Dott. Giuseppe Bottalico</p>', unsafe_allow_html=True)
     st.caption("Software CORE ENGINE BY Sergio Mirra")
 
 # --- 2. ANAGRAFICA PAZIENTI ---
@@ -743,7 +743,7 @@ elif menu == "📅 Agenda Appuntamenti":
                     st.warning(f"⚠️ **NOTA CLINICA:** {allergie_p.upper()}")
                 
                 if tel:
-                    msg = urllib.parse.quote(f"Studio Ga.Ma.: Le ricordiamo l'appuntamento del {a['Data']} alle ore {a['Ora']}")
+                    msg = urllib.parse.quote(f"STUDIO G.Bottalico: Le ricordiamo l'appuntamento del {a['Data']} alle ore {a['Ora']}")
                     c2.link_button("💬 WhatsApp", f"https://wa.me/{pulisci_numero_wa(tel)}?text={msg}", width="stretch")
                 
                 # Generiamo la chiave unica senza toccare la logica
@@ -930,7 +930,7 @@ elif menu == "📊 Statistiche e Richiami":
         # --- FASE 3: MESSAGGIO PERSONALIZZABILE PER LA SEGRETERIA ---
         st.markdown("### 📱 Personalizza Messaggio WhatsApp")
         
-        msg_predefinito = "Gentile paziente, lo Studio Dentistico Ga.Ma. le ricorda che sono passati 6 mesi dall'ultima igiene orale. La invitiamo a contattarci per fissare il prossimo appuntamento di controllo. Saluti!"
+        msg_predefinito = "Gentile paziente, lo STUDIO G.Bottalico le ricorda che sono passati 6 mesi dall'ultima igiene orale. La invitiamo a contattarci per fissare il prossimo appuntamento di controllo. Saluti!"
         
         testo_whatsapp = st.text_area(
             "Testo del promemoria da inviare:", 
@@ -1275,10 +1275,10 @@ elif menu == "📄 Fattura Sanitaria":
                 
                 # INTESTAZIONE CENTRALE
                 f_pdf.set_font("Arial", 'B', 16)
-                f_pdf.cell(190, 10, "STUDIO ODONTOIATRICO GA.MA. SRL", 0, 1, 'C')
+                f_pdf.cell(190, 10, "STUDIO Giuseppe Bottalico", 0, 1, 'C')
                 
                 
-                # ... qui sotto continua tutto il resto del tuo codice originale ...
+                # ... qui sotto continua tutto il resto del codice ...
                 
                 # Riprendiamo la tua logica di generazione delle celle...
                 # NOTA: Se usi stringhe personalizzate sotto questa riga, 
@@ -1286,10 +1286,10 @@ elif menu == "📄 Fattura Sanitaria":
                 
                 # --- FINE CODICE BLINDATO ---
                 f_pdf.set_font("Arial", '', 10)
-                f_pdf.cell(190, 5, "Via XX Settembre, 7 - 84091 Battipaglia (SA)", 0, 1, 'C')
-                f_pdf.cell(190, 5, "Tel. 0828345054 - C.F. - P.IVA 03036130650", 0, 1, 'C')
-                f_pdf.cell(190, 5, "Email centromedicogamasrl@gmail.com", 0, 1, 'C')
-                f_pdf.cell(190, 5, "CCIAA E NUMERO REA SA02566010 - Capitale Sociale € 10.400", 0, 1, 'C')
+                f_pdf.cell(190, 5, "Via ----------, --- - 84091 Battipaglia (SA)", 0, 1, 'C')
+                f_pdf.cell(190, 5, "Tel. ----------- - C.F. - P.IVA ----------", 0, 1, 'C')
+                f_pdf.cell(190, 5, "Email -----------------", 0, 1, 'C')
+                f_pdf.cell(190, 5, "CCIAA E NUMERO REA ------------ - Capitale Sociale € ----------", 0, 1, 'C')
                 f_pdf.ln(15)
                 
                 f_pdf.set_font("Arial", 'B', 12)
@@ -1345,7 +1345,7 @@ elif menu == "📄 Fattura Sanitaria":
                 # DIRETTORE SANITARIO A PIÈ DI PAGINA
                 f_pdf.set_y(-30)
                 f_pdf.set_font("Arial", 'I', 8)
-                f_pdf.cell(190, 5, '"Direttore Sanitario - Dott. Stefano Pio Gammella "', 0, 1, 'L')
+                f_pdf.cell(190, 5, '"Direttore Sanitario - Dott. Giuseppe Bottalico "', 0, 1, 'L')
                 
                 if hasattr(f_pdf, 'pages'):
                     for i in range(1, len(f_pdf.pages) + 1):
@@ -1473,10 +1473,10 @@ elif menu == "📑 Piano di Cura":
                 
                 # INTESTAZIONE CENTRALE (Dati richiesti da te)
                 pdf.set_font("Arial", 'B', 16)
-                pdf.cell(190, 10, "STUDIO ODONTOIATRICO GA.MA. SRL", 0, 1, 'C')
+                pdf.cell(190, 10, "STUDIO Giuseppe Bottalico", 0, 1, 'C')
                 pdf.set_font("Arial", '', 10)
-                pdf.cell(190, 5, "Via XX Settembre, 7 - 84091 Battipaglia (SA)", 0, 1, 'C')
-                pdf.cell(190, 5, "Tel. 0828345054 - P.IVA 03036130650", 0, 1, 'C')
+                pdf.cell(190, 5, "Via ----------, --- - 84091 Battipaglia (SA)", 0, 1, 'C')
+                pdf.cell(190, 5, "Tel. ------------ - P.IVA --------------", 0, 1, 'C')
                 pdf.ln(10)
                 
                 # TITOLO DOCUMENTO
@@ -1528,7 +1528,7 @@ elif menu == "📑 Piano di Cura":
                 pdf.set_y(-40)
                 pdf.set_font("Arial", 'B', 10)
                 pdf.cell(190, 5, "Direttore Sanitario", 0, 1, 'R')
-                pdf.cell(190, 5, '"Dott. Stefano Pio Gammella(iscrizione albo Odontoiatri Salerno n. 1487)"', 0, 1, 'R')
+                pdf.cell(190, 5, '"Dott. Giuseppe Bottalico(iscrizione albo Odontoiatri Salerno n. -------)"', 0, 1, 'R')
                 
                 # Salvataggio
                 st.session_state.pdf_piano = pdf.output(dest='S').encode('latin-1', errors='ignore')
@@ -1584,13 +1584,12 @@ if menu == "📄 Fattura Sanitaria":
                 f_pdf.add_page()
                 
                 f_pdf.set_font("Arial", 'B', 14)
-                f_pdf.cell(190, 6, "STUDIO ODONTOIATRICO GA.MA. SRL", 0, 1, 'C')
+                f_pdf.cell(190, 6, "STUDIO Giuseppe Bottalico", 0, 1, 'C')
                 
                 f_pdf.set_font("Arial", '', 10)
-                f_pdf.cell(190, 5, "Via XX Settembre, 7 - 84091 Battipaglia (SA)", 0, 1, 'C')
-                f_pdf.cell(190, 5, "Tel. 0828345054 - C.F. - P.IVA 03036130650", 0, 1, 'C')
-                f_pdf.cell(190, 5, "Email centromedicogamasrl@gmail.com - Pec studiogamasrl@pec.it", 0, 1, 'C')
-                f_pdf.cell(190, 5, "CCIAA E NUMERO REA SA02566010 - Capitale Sociale Euro 10.400", 0, 1, 'C')
+                f_pdf.cell(190, 5, "Via ---------, ---- - 84091 Battipaglia (SA)", 0, 1, 'C')
+                f_pdf.cell(190, 5, "Tel. ----------- - C.F. - P.IVA -----------", 0, 1, 'C')
+                f_pdf.cell(190, 5, "Email ------------------- - Pec ------------------", 0, 1, 'C')
                 f_pdf.ln(10)
                 
                 f_pdf.set_font("Arial", 'B', 11)
@@ -1648,7 +1647,7 @@ if menu == "📄 Fattura Sanitaria":
                 
                 f_pdf.set_y(260)
                 f_pdf.set_font("Arial", '', 10)
-                f_pdf.cell(190, 5, "Direttore Sanitario - Dott. Stefano Pio Gammella (iscrizione albo Odontoiatri Salerno n. 1487)", 0, 1, 'R')
+                f_pdf.cell(190, 5, "Direttore Sanitario - Dott. Giuseppe Bottalico (iscrizione albo Odontoiatri Salerno n. -------", 0, 1, 'R')
                 
                 if hasattr(f_pdf, 'pages'):
                     for i in range(1, len(f_pdf.pages) + 1):
