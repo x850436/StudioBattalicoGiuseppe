@@ -1,0 +1,176 @@
+{
+  "medici": [
+    {
+      "Nome": "LUCA",
+      "Cognome": "GAMMELLA",
+      "Specializzazione": "ODONTOIATRA"
+    },
+    {
+      "Nome": "MARIO",
+      "Cognome": "GAMMELLA",
+      "Specializzazione": "ODONTOTECNICO"
+    },
+    {
+      "Nome": "STEFANO",
+      "Cognome": "GAMMELLA",
+      "Specializzazione": "ODONTOIATRA"
+    }
+  ],
+  "appuntamenti": [
+    {
+      "Data": "09/05/2026",
+      "Ora": "11:15",
+      "Paziente": "MIRRA SERGIO [VIS]",
+      "Medico": "LUCA GAMMELLA",
+      "Importo": 0.0
+    },
+    {
+      "Data": "11/05/2026",
+      "Ora": "12:22",
+      "Paziente": "MIRRA SERGIO [VIS]",
+      "Medico": "STEFANO GAMMELLA",
+      "Importo": 100.0
+    },
+    {
+      "Data": "11/05/2026",
+      "Ora": "12:22",
+      "Paziente": "MIRRA SERGIO [VIS]",
+      "Medico": "STEFANO GAMMELLA",
+      "Importo": 100.0
+    }
+  ],
+  "pazienti": [
+    {
+      "Nome": "MIRRA SERGIO",
+      "Tel": "3382911931",
+      "CF": "MRRSRG60R27G023D",
+      "Via": "VIA XXI APRILE 4",
+      "Citta": "BATTIPAGLIA",
+      "Provincia": "SALERNO",
+      "Allergie": "NESSUNA",
+      "Note_Cliniche": "CARDIOPATICO",
+      "Odontogramma": {
+        "15": "Corona",
+        "16": "Estratto",
+        "14": "Impianto",
+        "13": "Estratto",
+        "44": "Protesi",
+        "12": "Otturazione",
+        "17": "Sano",
+        "11": "Carie",
+        "21": "Endodonzia",
+        "45": "Protesi"
+      },
+      "Pagamenti": [
+        {
+          "Data": "17/05/2026",
+          "Importo": "1000.00"
+        }
+      ],
+      "Diario": [
+        {
+          "Data": "26/05/2026",
+          "Lavoro": "AGGIORNAMENTO ODONTOGRAMMA: DENTE 44",
+          "Note": "Stato modificato alle ore 19:26. Da 'Otturazione' a 'Protesi'."
+        },
+        {
+          "Data": "26/05/2026",
+          "Lavoro": "AGGIORNAMENTO ODONTOGRAMMA: DENTE 45",
+          "Note": "Stato modificato alle ore 19:26. Da 'Sano' a 'Otturazione'."
+        },
+        {
+          "Data": "26/05/2026",
+          "Lavoro": "AGGIORNAMENTO ODONTOGRAMMA: DENTE 21",
+          "Note": "Stato modificato alle ore 18:49. Da 'Sano' a 'Endodonzia'."
+        },
+        {
+          "Data": "26/05/2026",
+          "Lavoro": "AGGIORNAMENTO ODONTOGRAMMA: DENTE 15",
+          "Note": "Stato modificato alle ore 18:18. Da 'Sano' a 'Corona'."
+        },
+        {
+          "Data": "22/05/2026",
+          "Lavoro": "AGGIORNAMENTO ODONTOGRAMMA: DENTE 11",
+          "Note": "Stato modificato alle ore 10:21. Da 'Sano' a 'Carie'."
+        },
+        {
+          "Data": "08/05/2026",
+          "Lavoro": "IGIENE",
+          "Note": "pulizia arcata superiore"
+        },
+        {
+          "Data": "08/05/2026",
+          "Lavoro": "ESTRAZIONE",
+          "Note": "estrazione con otturazione e devitalizzazione"
+        }
+      ],
+      "diario": [
+        "[22/05/2026 09:56] AGGIORNAMENTO ODONTOGRAMMA: Il dente 14 modificato da 'Sano' a 'Otturazione'.",
+        "[22/05/2026 09:45] AGGIORNAMENTO ODONTOGRAMMA: Il dente 13 \u00e8 stato modificato da 'Impianto' a 'Sano'.",
+        "[22/05/2026 09:45] AGGIORNAMENTO ODONTOGRAMMA: Il dente 14 \u00e8 stato modificato da 'Impianto' a 'Sano'.",
+        "[22/05/2026 09:45] AGGIORNAMENTO ODONTOGRAMMA: Il dente 15 \u00e8 stato modificato da 'Impianto' a 'Sano'.",
+        "[22/05/2026 09:45] AGGIORNAMENTO ODONTOGRAMMA: Il dente 17 \u00e8 stato modificato da 'Otturazione' a 'Sano'.",
+        "[22/05/2026 09:44] AGGIORNAMENTO ODONTOGRAMMA: Il dente 17 \u00e8 stato modificato da 'Sano' a 'Otturazione'.",
+        "[22/05/2026 09:43] AGGIORNAMENTO ODONTOGRAMMA: Il dente 14 \u00e8 stato modificato da 'Otturazione' a 'Impianto'.",
+        "[22/05/2026 09:38] AGGIORNAMENTO ODONTOGRAMMA: Il dente 13 \u00e8 stato modificato da 'Carie' a 'Impianto'.",
+        "[22/05/2026 09:32] AGGIORNAMENTO ODONTOGRAMMA: Il dente 14 \u00e8 stato modificato da 'Carie' a 'Otturazione'."
+      ],
+      "lavori eseguiti": "[22/05/2026 10:09] AGGIORNAMENTO ODONTOGRAMMA: Il dente 13 modificato da 'Sano' a 'Otturazione'.",
+      "Registro lavori eseguiti": "[22/05/2026 10:13] AGGIORNAMENTO ODONTOGRAMMA: Il dente 13 modificato da 'Otturazione' a 'Estratto'.",
+      "Preventivo": "1500.0"
+    }
+  ],
+  "fatture": [
+    {
+      "numero": "01/2026",
+      "data": "2026-05-21",
+      "paziente": "MIRRA SERGIO",
+      "importo": 2000.0,
+      "metodo_pagamento": "Carta di Credito/Debito",
+      "totale": 2002.0
+    },
+    {
+      "numero": "02/2026",
+      "data": "2026-05-26",
+      "paziente": "MIRRA SERGIO",
+      "importo": 100.0,
+      "metodo_pagamento": "Carta di Credito/Debito",
+      "totale": 102.0
+    },
+    {
+      "numero": "03/2026",
+      "data": "2026-05-26",
+      "paziente": "MIRRA SERGIO",
+      "importo": 200.0,
+      "metodo_pagamento": "Carta di Credito/Debito",
+      "totale": 202.0
+    }
+  ],
+  "magazzino": {
+    "ANTIBIOTICO (Lotto: 1234568)": {
+      "Nome": "ANTIBIOTICO",
+      "Lotto": "1234568",
+      "Quantit\u00e0": 10,
+      "Scadenza": "02/06/2026"
+    },
+    "SIRINGHE (Lotto: 12345687)": {
+      "Nome": "SIRINGHE",
+      "Lotto": "12345687",
+      "Quantit\u00e0": 10,
+      "Scadenza": "29/05/2026"
+    },
+    "BRUFEN (Lotto: 123456789)": {
+      "Quantit\u00e0": 7,
+      "Scadenza": "23/06/2026",
+      "Soglia": 4
+    }
+  },
+  "storico_magazzino": [
+    {
+      "Data/Ora": "07/06/2026 11:13",
+      "Operazione": "Carico Iniziale/Aggiornamento",
+      "Articolo": "BRUFEN (Lotto: 123456789)",
+      "Quantit\u00e0": "+7"
+    }
+  ]
+}
